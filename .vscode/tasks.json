@@ -1,46 +1,3 @@
-// {
-// 	"version": "2.0.0",
-// 	"options": {
-// 		"cwd": "${workspaceFolder}\\build"
-// 	},
-
-// 	"tasks":[
-// 		{
-// 			"type": "shell",
-// 			"label": "cmake",
-// 			"command": "cmake",		
-// 			// 命令行参数
-// 			"args": [
-// 				"-G",
-// 				"MinGW Makefiles",
-// 				"..",
-// 				"-I", "D:\\OpenCV\\opencv\\build\\x64\\MinGW\\install\\include",
-// 				"-L", "D:\\OpenCV\\opencv\\build\\x64\\MinGW\\install\\x64\\mingw\\bin",
-// 			]
-// 		},
-
-// 		{
-// 			"label": "make",
-// 			"group": {
-// 				"kind": "build",
-// 				"isDefault": true
-// 			},
-// 			"command": "mingw32-make.exe",
-// 			// 命令行参数
-// 			"args": []
-// 		},
-
-// 		{
-// 			"label": "Build",
-// 			"dependsOn":[
-// 				"cmake",
-// 				"make"
-// 			]
-// 		}
-
-// 	]	
-// }
-
 {
     "version": "2.0.0",
     "tasks": [
@@ -52,7 +9,8 @@
                 "-G",
                 "MinGW Makefiles",
                 "..",
-                "-DCMAKE_PREFIX_PATH=D:/OpenCV/opencv/build/x64/MinGW/install"
+                "-DCMAKE_PREFIX_PATH=D:/OpenCV/opencv/build/x64/MinGW/install",
+                "-DCMAKE_PREFIX_PATH=D:/mingw64/mingw64"
             ],
             "options": {
                 "cwd": "${workspaceFolder}/build"
