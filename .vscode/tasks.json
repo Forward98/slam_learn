@@ -1,40 +1,82 @@
+// {
+// 	"version": "2.0.0",
+// 	"options": {
+// 		"cwd": "${workspaceFolder}\\build"
+// 	},
+
+// 	"tasks":[
+// 		{
+// 			"type": "shell",
+// 			"label": "cmake",
+// 			"command": "cmake",		
+// 			// 命令行参数
+// 			"args": [
+// 				"-G",
+// 				"MinGW Makefiles",
+// 				"..",
+// 				"-I", "D:\\OpenCV\\opencv\\build\\x64\\MinGW\\install\\include",
+// 				"-L", "D:\\OpenCV\\opencv\\build\\x64\\MinGW\\install\\x64\\mingw\\bin",
+// 			]
+// 		},
+
+// 		{
+// 			"label": "make",
+// 			"group": {
+// 				"kind": "build",
+// 				"isDefault": true
+// 			},
+// 			"command": "mingw32-make.exe",
+// 			// 命令行参数
+// 			"args": []
+// 		},
+
+// 		{
+// 			"label": "Build",
+// 			"dependsOn":[
+// 				"cmake",
+// 				"make"
+// 			]
+// 		}
+
+// 	]	
+// }
+
 {
-	"version": "2.0.0",
-	"options": {
-		"cwd": "${workspaceFolder}\\build"
-	},
-
-	"tasks":[
-		{
-			"type": "shell",
-			"label": "cmake",
-			"command": "cmake",		
-			// 命令行参数
-			"args": [
-				"-G",
-				"MinGW Makefiles",
-				".."
-			]
-		},
-
-		{
-			"label": "make",
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"command": "mingw32-make.exe",
-			// 命令行参数
-			"args": []
-		},
-
-		{
-			"label": "Build",
-			"dependsOn":[
-				"cmake",
-				"make"
-			]
-		}
-
-	]	
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "cmake",
+            "command": "cmake",
+            "args": [
+                "-G",
+                "MinGW Makefiles",
+                "..",
+                "-DCMAKE_PREFIX_PATH=D:/OpenCV/opencv/build/x64/MinGW/install"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "make",
+            "command": "mingw32-make.exe",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build",
+            "dependsOn": ["cmake", "make"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
 }
+

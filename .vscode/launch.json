@@ -1,30 +1,58 @@
+// {
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "(gdb) Launch", // 配置名称，将会在启动配置的下拉菜单中显示，一般不用修改  
+//             "type": "cppdbg", // 配置类型，这里只能为cppdbg  
+//             "request": "launch", // 请求配置类型，可以为launch（启动）或attach（附加）  
+//             // 将要调试的可执行程序的路径 
+//             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+//             // 程序调试时传递给程序的命令行参数，一般设为空即可
+//             "args": [],
+//             // 默认为false，设为true时，就算没有设置断点，调试时程序也将暂停在程序入口处
+//             "stopAtEntry": true, 
+//             // 要调试的可执行程序的工作路径 
+//             "cwd": "${workspaceFolder}\\bin",
+//             "environment": [],
+//             "externalConsole": true, // 调试时是否显示控制台窗口，设置为true显示控制台  
+//             "MIMode": "gdb",
+//             "miDebuggerPath": "D:\\mingw64\\mingw64\\bin\\gdb.exe", // 调试器mingw64的安装路径  
+//             "preLaunchTask": "C/C++: g++.exe",
+//             "setupCommands": [
+//                 {
+//                     "description": "Enable pretty-printing for gdb",
+//                     "text": "-enable-pretty-printing",
+//                     "ignoreFailures": true
+//                 }
+//             ]
+//         }
+//     ]
+// }
+
+
 {
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch", // 配置名称，将会在启动配置的下拉菜单中显示，一般不用修改  
-            "type": "cppdbg", // 配置类型，这里只能为cppdbg  
-            "request": "launch", // 请求配置类型，可以为launch（启动）或attach（附加）  
-            // 将要调试的可执行程序的路径 
+            "name": "Debug SLAM Program",
+            "type": "cppdbg",
+            "request": "launch",
             "program": "${workspaceFolder}\\bin\\myprint.exe",
-            // 程序调试时传递给程序的命令行参数，一般设为空即可
             "args": [],
-            // 默认为false，设为true时，就算没有设置断点，调试时程序也将暂停在程序入口处
-            "stopAtEntry": false, 
-            // 要调试的可执行程序的工作路径 
-            "cwd": "${workspaceFolder}\\bin",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": false, // 调试时是否显示控制台窗口，设置为true显示控制台  
+            "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "D:\\mingw64\\mingw64\\bin\\gdb.exe", // 调试器mingw64的安装路径  
-            "preLaunchTask": "Build",
+            "miDebuggerPath": "D:\\mingw64\\mingw64\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ]
+            ],
+            "preLaunchTask": "Build"
         }
     ]
 }
