@@ -3,6 +3,7 @@
         "cpp": "cd $dir && g++ -I D:/OpenCV/opencv/build/x64/MinGW/install/include -I D:/mingw64/mingw64/include/eigen3 -L D:/OpenCV/opencv/build/x64/MinGW/install/x64/mingw/bin -o $fileNameWithoutExt *.cpp -lopencv_world4100  -g && $dir$fileNameWithoutExt"
     },
     "files.associations": {
-        "core": "cpp"
+        "core": "cpp",
+        "iostream": "cpp"
     }
 }

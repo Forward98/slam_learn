@@ -20,6 +20,9 @@ void Camera::loadConfig(const std::string& file)
     {
         return;
     }
+    // 从配置文件中读取相机的内参和畸变参数
+    // fx, fy, cx, cy = 0.0;
+    // k1, k2 = 0.0;
     cv::FileNode n = fs["camera"]["intrinsics"];
     fx = static_cast<double>(n["fx"]);
     fy = static_cast<double>(n["fy"]);
