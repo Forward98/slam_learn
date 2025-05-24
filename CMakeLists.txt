@@ -25,6 +25,8 @@ file(GLOB SrcFiles
      "${PROJECT_SOURCE_DIR}/src/base/*.cpp"
      "${PROJECT_SOURCE_DIR}/src/util/*.cpp"
      "${PROJECT_SOURCE_DIR}/src/calib/*.cpp"
+     "${PROJECT_SOURCE_DIR}/src/common/*.cpp"
+     "${PROJECT_SOURCE_DIR}/src/feature/*.cpp"
 )
 
 # 设置可执行文件输出路径
