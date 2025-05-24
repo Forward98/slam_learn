@@ -16,13 +16,22 @@ include_directories(${OpenCV_DIR}/include)
 link_directories(${OpenCV_DIR}/x64/mingw/bin)
 
 
+# # 将源文件列表写在变量 SrcFiles 中
+# aux_source_directory(${PROJECT_SOURCE_DIR}/src SrcFiles)
+
 # 将源文件列表写在变量 SrcFiles 中
-aux_source_directory(./src SrcFiles)
+file(GLOB SrcFiles
+     "${PROJECT_SOURCE_DIR}/src/*.cpp"
+     "${PROJECT_SOURCE_DIR}/src/base/*.cpp"
+     "${PROJECT_SOURCE_DIR}/src/util/*.cpp"
+     "${PROJECT_SOURCE_DIR}/src/calib/*.cpp"
+)
 
 # 设置可执行文件输出路径
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 # 设置可执行文件的名称
+# message(STATUS "SrcFiles: ${SrcFiles}")
 add_executable(myprint ${SrcFiles})
 
 # 链接 OpenCV 库
